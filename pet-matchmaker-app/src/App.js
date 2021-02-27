@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import logo from './pet-house.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="w3-theme-orange container">
+      <div className="w3-theme-d1 container" id="summary">
+        <p>Summary:<br/>
+        Inspired by early 2010s personality quizzes,
+        Pet Matchmaker is a web app that matches you to the best 
+        possible pet. The quiz is simple and takes many factors into account such as:
+        home environment, attentional availability, emotional needs, budget, allergies, and more!
+        Click the start button below to find <i>your</i> perfect pet!
+      </p>
+      </div>
     </div>
+
+  </div>
   );
 }
 

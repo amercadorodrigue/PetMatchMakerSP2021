@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+#welcomeBanner{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+body{
+  background-color: rgb(255, 217, 173);
+}
+
+#summary{
+  font-size: larger;
+}
