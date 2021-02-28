@@ -12,6 +12,7 @@ const fishSchema = mongoose.Schema({
         space: Number,
         attention: Number,
         budget: Number,
+        allergies: Boolean
     },
 });
 

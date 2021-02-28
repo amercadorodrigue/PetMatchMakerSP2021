@@ -14,8 +14,9 @@ const reptileSchema = mongoose.Schema({
         space: Number,
         attention: Number,
         budget: Number,
+        allergies: Boolean
     },
 });
 
-const ReptileAnimal = mongoose.model('Fish'. reptileSchema);
+const ReptileAnimal = mongoose.model('Reptile'. reptileSchema);
 export default reptileSchema;
