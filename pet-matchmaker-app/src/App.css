@@ -39,7 +39,8 @@
 
 #welcomeBanner{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  color: peru;
+  text-align: center;
 }
 
 body{
@@ -48,4 +49,19 @@ body{
 
 #summary{
   font-size: larger;
+  max-width: 70%;
+  position: relative;
+  margin:auto;
+  text-align: center;
+}
+
+.button{
+  margin-top: 50px;
+  position: relative;
+  font-size: xx-large;
+  background-color: darkorange;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  display:inline-block;
 }

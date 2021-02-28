@@ -9,3 +9,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.footer{
+  margin:auto;
+  margin:30px;
+}
