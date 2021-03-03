@@ -14,8 +14,8 @@ const fishSchema = mongoose.Schema({
         budget: Number,
         allergies: Boolean
     },
-});
+}, { collection: 'Fish' });
 
-const FishAnimal = mongoose.model('Fish'. fishSchema);
-export default fishSchema;
+const FishAnimal = mongoose.model('Fish', fishSchema);
+export default FishAnimal;
 
