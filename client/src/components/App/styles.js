@@ -39,6 +39,5 @@ export default makeStyles(() => ({
     },
     buttonSubmit: {
         backgroundColor: 'rgba(230,138,0, 1)',
-        textAlign: 'center'
     }
   }));
