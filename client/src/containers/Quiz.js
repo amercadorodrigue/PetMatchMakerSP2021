@@ -1,7 +1,7 @@
 import React from 'react';
+import Question from '../components/Questions/Question';
 const Quiz = () =>{
    return( 
-   <h1>This is the quiz page for now :D</h1>
+   <Question></Question>
    )};
-
 export default Quiz;
