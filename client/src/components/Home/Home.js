@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Container, AppBar, Typography, Button, CssBaseline} from '@material-ui/core';
 import logo from '../../images/pet-house.svg';
