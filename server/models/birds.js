@@ -15,5 +15,5 @@ const birdsSchema = mongoose.Schema({
     },
 }, { collection: 'Birds' });
 
-const BirdAnimal = mongoose.model('Bird', birdsSchema);
+const BirdsAnimal = mongoose.model('Bird', birdsSchema);
 export default BirdsAnimal;

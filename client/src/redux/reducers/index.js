@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import quizzes from './quizzes';
+import animals from './animals';
 
 
-export default combineReducers({ quizzes });
+export default combineReducers({ animals });

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => ({
     headingBar: {
         borderRadius: 15,
         margin: '30px 0',
@@ -39,5 +39,9 @@ export default makeStyles(() => ({
     },
     buttonSubmit: {
         backgroundColor: 'rgba(230,138,0, 1)',
-    }
+    },
+    paper: {
+        padding: theme.spacing(2),
+        margin: '30px 0'
+      }
   }));

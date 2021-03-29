@@ -1,10 +1,13 @@
 import express from 'express';
-import { getFish, getMammals, getReptiles } from '../controllers/quizzes.js';
+import { getBirds, getFish, getMammals, getReptiles } from '../controllers/quizzes.js';
 const router = express.Router();
 
 //trying different requests
-router.get('/', getFish);
-// router.get('/', getMammals);
-// router.get('/', getReptiles);
+router.get('/Birds', getBirds);
+router.get('/Fish', getFish);
+router.get('/Mammals', getMammals);
+router.get('/Reptiles', getReptiles);
+
+ 
 
 export default router;

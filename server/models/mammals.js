@@ -14,6 +14,7 @@ const mammalsSchema = mongoose.Schema({
     grooming: String,
     values: {
         space: Number,
+        size: Number,
         attention: Number,
         budget: Number,
         allergies: Boolean
