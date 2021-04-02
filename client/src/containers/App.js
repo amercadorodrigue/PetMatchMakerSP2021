@@ -12,7 +12,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getFish());
+    dispatch(getMammals());
   }, [dispatch]);
 
   return (

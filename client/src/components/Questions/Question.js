@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Container, AppBar, Typography, Button, CssBaseline, Grid, Paper, Box } from '@material-ui/core';
+import { Container, AppBar, Typography, Button, Paper } from '@material-ui/core';
 import questionList from "../../data/questionsList";
-import logo from '../../images/pet-house.svg';
 import useStyles from './styles';
 
 const Question = () => {
@@ -63,13 +62,6 @@ const Question = () => {
   };
   return (
     <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <AppBar className={classes.headingBar} position="static" color="inherit">
-          <img className={classes.image} src={logo} alt="memories" height="60" />
-          <Typography className={classes.heading} variant="h2" align="center">Pet Matchmaker</Typography>
-        </AppBar>
-      </Container>
       
       <Paper className={classes.paper} elevation={3} variant="outlined" >
         {quizFinished ? (

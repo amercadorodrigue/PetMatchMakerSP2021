@@ -39,6 +39,7 @@ export default makeStyles(() => ({
     },
     buttonSubmit: {
         backgroundColor: 'rgba(230,138,0, 1)',
+        marginBlock: '15px'
     },
     container: {
         display: 'flex',
