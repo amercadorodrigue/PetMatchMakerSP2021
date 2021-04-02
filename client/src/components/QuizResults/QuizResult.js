@@ -24,7 +24,7 @@ const QuizResult = () => {
                 {
                   animals.map((animal) => (
                      <Grid key={animal._id} item xs={10} md={4}>
-                    <QuizResultCard animal={animal} />                            
+                    <QuizResultCard animals={animal} />                            
                   </Grid>
                   ))
                 }

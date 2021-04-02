@@ -1,35 +1,36 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Typography, CardActionArea, Box } from '@material-ui/core';
 import useStyles from './styles';
-import lizard from '../../../images/cards/lizard.jpg';
 
 
-const ResultCard = ({ animal }) => {
+const ResultCard = ({ animals }) => {
     const classes = useStyles();
-
+    const headers = Object.keys(animals).filter(key => key.toString() !== "_id" && key.toString() !== "values" && key.toString() !== "image");
     return (
         <Card className={classes.root} variant="outlined">
             <CardActionArea>
                 <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
-                    height="140"
-                    image={lizard}
+                    height="200"
+                    src={`/images/cards/${ animals.image }`}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        { animal.breed }
-          </Typography>
-          <Typography gutterBottom variant="subtitle1" component="h5">
-                        Breed: { animal.breed } <br/>
-                        Description: {animal.description} <br/>
-                        Typical Conditions: {animal.condition} <br/>
-                        Diet: { animal.diet } <br/>
-                        Special Needs: { animal.specialNeeds } <br/>
-                        Tank Size: { animal.tankSize } <br/>
-                        Water Type: { animal.waterType } <br/>
-          </Typography>
+                    <Typography gutterBottom variant="h4" component="h4" fontWeight="fontWeightBold">
+                        { animals.breed } 
+                    </Typography>
+          
+                        { headers.map(header => 
+                        <div> 
+                            <Typography gutterBottom variant="subtitle1" component="h5"> <Box  fontWeight="fontWeightBold" display='inline'> 
+                                { header.charAt(0).toLocaleUpperCase() + header.slice(1).replace(/([a-z0-9])([A-Z])/g, '$1 $2')}: </Box>  { animals[header] }
+                             
+                            </Typography> 
+                            
+                        </div>
+                        )} 
+          
                 </CardContent>
             </CardActionArea>
         </Card>
