@@ -17,22 +17,48 @@ const Question = () => {
   const classes = useStyles();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
-  const [smallDog, setSmallDog] = useState(0);
-  const [mediumDog, setMediumDog] = useState(0);
-  const [largeDog, setLargeDog] = useState(0);
-  const [cat, setCat] = useState(0);
-  const [fish, setFish] = useState(0);
-  const [reptile, setReptile] = useState(0);
-  const [bird, setBird] = useState(0);
-  const handleAnswerOptionClick = (smallDogPoints, mediumDogPoints, largeDogPoints, catPoints, fishPoints, reptilePoints, birdPoints) => {
+  const [space, setSpace] = useState(0);
+  const [allergies, setAllergies] = useState(false);
+  const [energy, setEnergy] = useState(0);
+  const [travel, setTravel] = useState(0);
+  const [cuddle, setCuddle] = useState(false);
+  const [emotionalSupport, setEmotionalSupport] = useState(false);
+  const [budget, setBudget] = useState(0);
+  const [smallChildren, setSmallChildren] = useState(false);
+  const handleAnswerOptionClick = (topic, value) => {
     const nextQuestion = currentQuestion + 1;
-    setSmallDog(smallDog + smallDogPoints);
-    setMediumDog(mediumDog + mediumDogPoints);
-    setLargeDog(largeDog + largeDogPoints);
-    setCat(cat + catPoints);
-    setFish(fish + fishPoints);
-    setReptile(reptile + reptilePoints);
-    setBird(bird + birdPoints);
+    if (topic === 'space')
+    {
+      setSpace(value);
+    }
+    else if (topic === 'allergies')
+    {
+      setAllergies(value);
+    }
+    else if (topic === 'energy')
+    {
+      setEnergy(value);
+    }
+    else if (topic === 'travel')
+    {
+      setTravel(value);
+    }
+    else if (topic === 'cuddle')
+    {
+      setCuddle(value);
+    }
+    else if (topic === 'emotional support')
+    {
+      setEmotionalSupport(value);
+    }
+    else if (topic === 'budget')
+    {
+      setBudget(value);
+    }
+    else
+    {
+      setSmallChildren(value);
+    }
     (nextQuestion < questionList.length) ? setCurrentQuestion(nextQuestion) : setQuizFinished(true);
   };
   return (
@@ -49,13 +75,14 @@ const Question = () => {
         {quizFinished ? (
           <Container maxWidth="sm">
             <Link to='/results' style={{ textDecoration: 'none' }}>
-              {"SD: " + smallDog}<br />
-              {"MD: " + mediumDog}<br />
-              {"LD: " + largeDog}<br />
-              {"C: " + cat}<br />
-              {"F: " + fish}<br />
-              {"R: " + reptile}<br />
-              {"B: " + bird}<br />
+              {"Space: " + space}<br />
+              {"Allergies: " + allergies}<br />
+              {"Energy: " + energy}<br />
+              {"Travel: " + travel}<br />
+              {"Cuddle: " + cuddle}<br />
+              {"Emotional Support: " + emotionalSupport}<br />
+              {"Budget: " + budget}<br />
+              {"Small Children: " + smallChildren}<br />
               <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>See Results</Button>
             </Link>
           </Container>) : (<>
@@ -72,13 +99,8 @@ const Question = () => {
             <Container maxWidth="sm">
               {questionList[currentQuestion].answers.map((answer, index) => (
                 <Button key={index} className={classes.buttonSubmit} variant="contained" color="primary" fullWidth onClick={() => handleAnswerOptionClick(
-                  answer.smallDogPoints,
-                  answer.mediumDogPoints,
-                  answer.largeDogPoints,
-                  answer.catPoints,
-                  answer.fishPoints,
-                  answer.reptilePoints,
-                  answer.birdPoints
+                  questionList[currentQuestion].topic,
+                  answer.value
                 )}>{answer.label}</Button>
               ))}
             </Container>

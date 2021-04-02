@@ -2,6 +2,7 @@ import FishAnimal from '../models/fish.js';
 import MammalAnimal from '../models/mammals.js';
 import ReptileAnimal from '../models/reptiles.js';
 import BirdAnimal from '../models/birds.js';
+// import User from '../models/users.js';
 
 
 export const getFish = async (req, res) => {
@@ -47,3 +48,14 @@ export const getBirds = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+
+// export const getUser = async (req, res) => {
+//     try {
+//         const user = await User.find();
+//         console.log(user);
+
+//         res.status(200).json(user);
+//     } catch (error) {
+//         res.status(404).json({ message: error.message });
+//     }
+// }
