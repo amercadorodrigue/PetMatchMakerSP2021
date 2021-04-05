@@ -32,32 +32,29 @@ const Question = () => {
   const [quizFinished, setQuizFinished] = useState(false);
   const handleAnswerOptionClick = (topic, value) => {
     const nextQuestion = currentQuestion + 1;
-    switch (topic) {
-    case 'space': {
+    if (topic === 'space'){
       setValues({ ...values, "values.size": value, "values.space": value });
     }
-    case'allergies': {
+    else if (topic === 'allergies'){
       setValues({ ...values, "values.allergies": value });
     }
-    case 'energy': {
+    else if (topic === 'energy') {
       setValues({ ...values, "values.energy": value });
     }
-    case 'travel': {
+    else if (topic === 'travel'){
       setValues({ ...values, "values.attention": value });
     }
-    case 'cuddle': {
+    else if (topic === 'cuddle'){
     }
-    case 'emotional support': {
+    else if (topic === 'emotional support'){
       setValues({ ...values, "values.emotionalSupport": value });
     }
-    case 'budget': {
+    else if (topic === 'budget') {
       setValues({ ...values, "values.budget": value });
     }
-    case 'smallChildren': {
+    else {
       setValues({ ...values, "values.smallChildren": value });
-      break;
     }
-  }
     (nextQuestion < questionList.length) ? setCurrentQuestion(nextQuestion) : setQuizFinished(true);
   };
   return (
@@ -73,7 +70,7 @@ const Question = () => {
               <img className={classes.image} src={'/images/cat-adopting.jpg'} alt="adopting" />
 
               <Link to='/results' style={{ textDecoration: 'none' }}>
-                <Button className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => dispatch(getMammals(values))}>See Results</Button>
+                <Button className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => dispatch(getMammals())}>See Results</Button>
               </Link>
             </Container>) : (<>
               <Container maxWidth="sm">
