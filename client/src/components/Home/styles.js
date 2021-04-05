@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(() => ({
-    headingBar: {
+    appBar: {
+        padding: '15px',
         borderRadius: 15,
         margin: '30px 0',
         display: 'flex',
@@ -10,6 +11,7 @@ export default makeStyles(() => ({
         alignItems: 'center',
     },
     heading: {
+        paddingLeft: '15px',
         fontFamily: [
             '"Segoe UI"',
             'Tahoma',
@@ -20,7 +22,9 @@ export default makeStyles(() => ({
         color: 'rgba(205,133,63, 1)',
         textAlign: 'center'
     },
-    summaryBar: {
+    summary: {
+        paddingTop: '15px',
+        paddingBottom: '15px',
         borderRadius: 15,
         margin: '30px 0',
         display: 'flex',
@@ -29,9 +33,9 @@ export default makeStyles(() => ({
         alignItems: 'center',
         backgroundColor: 'rgba(230,138,0, 1)'
     },
-    summary: {
+    summaryText: {
         fontSize: 'larger',
-        maxWidth: '70%',
+        maxWidth: '80%',
         position: 'relative',
         margin: 'auto',
         textAlign: 'center',

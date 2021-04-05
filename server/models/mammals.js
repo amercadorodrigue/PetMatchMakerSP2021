@@ -14,10 +14,13 @@ const mammalsSchema = mongoose.Schema({
     grooming: String,
     values: {
         space: Number,
+        allergies: Boolean,
+        energy: Number,
         size: Number,
         attention: Number,
+        emotionalSupport: Boolean,
         budget: Number,
-        allergies: Boolean
+        smallChildren: Boolean
     },
 }, { collection: 'Mammals' });
 

@@ -21,7 +21,7 @@ const AppBarComponent = () => {
       <Link to='/' style={{ textDecoration: 'none' }}>
       <Container maxWidth="lg">
         <AppBar className={classes.headingBar} position="static" color="inherit">
-          <img className={classes.image} src={logo} alt="memories" height="60" />
+          <img className={classes.image} src={logo} alt="pets" height="60" />
           <Typography className={classes.heading} variant="h2" align="center">Pet Matchmaker</Typography>
         </AppBar>
       </Container>

@@ -22,11 +22,12 @@ export const getFish = () => async (dispatch) => {
     }
 }
 
-export const getMammals = () => async (dispatch) => {
+export const getMammals = (value) => async (dispatch) => {
 
     try {
-        const { data } = await api.fetchMammals();
+        const { data } = await api.fetchMammals( value );
         dispatch({type: FETCH_ALL, payload: data });
+        console.log();
     } catch (error) {
         console.log(error);
     }
@@ -35,7 +36,7 @@ export const getMammals = () => async (dispatch) => {
 export const getReptiles = () => async (dispatch) => {
 
     try {
-        const { data } = await api.fetchMammals();
+        const { data } = await api.fetchReptiles();
         dispatch({type: FETCH_ALL, payload: data });
     } catch (error) {
         console.log(error);

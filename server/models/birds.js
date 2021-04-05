@@ -9,9 +9,13 @@ const birdsSchema = mongoose.Schema({
     noiseLevel: String,
     values: {
         space: Number,
+        allergies: Boolean,
+        energy: Number,
+        size: Number,
         attention: Number,
+        emotionalSupport: Boolean,
         budget: Number,
-        allergies: Boolean
+        smallChildren: Boolean
     },
 }, { collection: 'Birds' });
 

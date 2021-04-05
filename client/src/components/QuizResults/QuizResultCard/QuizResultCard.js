@@ -7,14 +7,14 @@ const ResultCard = ({ animals }) => {
     const classes = useStyles();
     const headers = Object.keys(animals).filter(key => key.toString() !== "_id" && key.toString() !== "values" && key.toString() !== "image");
     return (
-        <Card className={classes.root} variant="outlined">
+        <Card key={animals._id} className={classes.root} variant="outlined">
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt={`${ animals.image }`}
                     height="200"
                     src={`/images/cards/${ animals.image }`}
-                    title="Contemplative Reptile"
+                    title={`${ animals.image }`}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h4" component="h4" fontWeight="fontWeightBold">

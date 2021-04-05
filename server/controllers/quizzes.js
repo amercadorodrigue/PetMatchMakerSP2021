@@ -16,7 +16,9 @@ export const getFish = async (req, res) => {
 
 export const getMammals = async (req, res) => {
     try {
-        const mammal = await MammalAnimal.find();
+        const params =  req.query;
+        console.log("These are parameters " + params);
+        const mammal = await MammalAnimal.find( params );
         console.log(mammal);
 
         res.status(200).json(mammal);

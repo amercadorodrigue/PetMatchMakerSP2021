@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     headingBar: {
+        padding: '15px',
         borderRadius: 15,
         margin: '30px 0',
         display: 'flex',
@@ -10,6 +11,7 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
     },
     heading: {
+        paddingLeft: '15px',
         fontFamily: [
             '"Segoe UI"',
             'Tahoma',
