@@ -9,6 +9,15 @@ const questions = [
         ]
     },
     {
+        question: 'What is your desired animal size?',
+        topic: 'size',
+        answers: [
+            { label: 'Small', value: 1 },
+            { label:'Medium', value: 3 },
+            { label:'Large', value: 5 }
+        ]
+    },
+    {
         question: 'Do you have dander allergies?',
         topic: 'allergies',
         answers: [
@@ -27,7 +36,7 @@ const questions = [
     },
     {
         question: 'On average, how long are you away from home daily?',
-        topic: 'travel',
+        topic: 'attention',
         answers: [
             { label: 'I work from home!', value: 1 },
             { label:'Typical 9-5', value: 3 },

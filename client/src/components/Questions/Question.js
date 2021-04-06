@@ -33,18 +33,22 @@ const Question = () => {
   const handleAnswerOptionClick = (topic, value) => {
     const nextQuestion = currentQuestion + 1;
     if (topic === 'space'){
-      setValues({ ...values, "values.size": value, "values.space": value });
+      setValues({ ...values, "values.space": value });
     }
     else if (topic === 'allergies'){
       setValues({ ...values, "values.allergies": value });
     }
+    else if (topic === 'size'){
+      setValues({ ...values, "values.size": value });
+    }
     else if (topic === 'energy') {
       setValues({ ...values, "values.energy": value });
     }
-    else if (topic === 'travel'){
+    else if (topic === 'attention'){
       setValues({ ...values, "values.attention": value });
     }
     else if (topic === 'cuddle'){
+      setValues({ ...values, "values.cuddle": value });
     }
     else if (topic === 'emotional support'){
       setValues({ ...values, "values.emotionalSupport": value });
@@ -70,7 +74,7 @@ const Question = () => {
               <img className={classes.image} src={'/images/cat-adopting.jpg'} alt="adopting" />
 
               <Link to='/results' style={{ textDecoration: 'none' }}>
-                <Button className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => dispatch(getMammals())}>See Results</Button>
+                <Button className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => dispatch(getMammals(values))}>See Results</Button>
               </Link>
             </Container>) : (<>
               <Container maxWidth="sm">
