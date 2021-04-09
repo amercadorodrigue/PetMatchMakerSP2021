@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { matchPath } from 'react-router';
 
 export default makeStyles(() => ({
     headingBar: {
@@ -46,8 +47,26 @@ export default makeStyles(() => ({
         alignItems: 'center',
         marginBottom: '15px',
     },
+    noResults: {
+        padding: '15px',
+        fontFamily: [
+            '"Segoe UI"',
+            'Tahoma',
+            'Geneva',
+            'Verdana',
+            'sans-serif'
+        ],
+        textAlign: 'center'
+    },
     paper: {
-        
+        display: "flex",
+        margin: 'auto',
+    },
+    image: {
+        margin: '2px',
+        maxWidth: '500px',
+        maxHeight: '500px',
+        borderRadius: 5
     }
 
 }));

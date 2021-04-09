@@ -5,7 +5,7 @@ import { Container, AppBar, Typography, Button, Paper } from '@material-ui/core'
 import questionList from "../../data/questionsList";
 import useStyles from './styles';
 import { useDispatch } from 'react-redux';
-import { getFish, getMammals, getReptiles } from '../../redux/actions/animals';
+import { getAnimals, getFish, getMammals, getReptiles } from '../../redux/actions/animals';
 
 const Question = () => {
   const dispatch = useDispatch();
@@ -31,12 +31,13 @@ const Question = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
   const handleAnswerOptionClick = (topic, value) => {
+    console.log(values);
     const nextQuestion = currentQuestion + 1;
     if (topic === 'space'){
-      setValues({ ...values, "values.space": value });
+      setValues({ ...values, "values.space": value  });
     }
     else if (topic === 'allergies'){
-      setValues({ ...values, "values.allergies": value });
+      setValues({ ...values, "values.allergies": value  });
     }
     else if (topic === 'size'){
       setValues({ ...values, "values.size": value });
@@ -60,6 +61,7 @@ const Question = () => {
       setValues({ ...values, "values.smallChildren": value });
     }
     (nextQuestion < questionList.length) ? setCurrentQuestion(nextQuestion) : setQuizFinished(true);
+    
   };
   return (
     <MuiThemeProvider theme={theme}>
@@ -74,7 +76,7 @@ const Question = () => {
               <img className={classes.image} src={'/images/cat-adopting.jpg'} alt="adopting" />
 
               <Link to='/results' style={{ textDecoration: 'none' }}>
-                <Button className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => dispatch(getMammals(values))}>See Results</Button>
+                <Button className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => dispatch(getAnimals(values))}>See Results</Button>
               </Link>
             </Container>) : (<>
               <Container maxWidth="sm">

@@ -6,7 +6,11 @@ export default makeStyles({
         flexDirection: 'column',
         justifyContent: 'space-between',
         borderRadius: '15px',
-        height: '100%',
+        height: '550px',
         position: 'relative',
+      },
+      media: {
+        height: '250px',
+        width: '100%'
       }
 })

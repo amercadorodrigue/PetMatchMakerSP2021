@@ -18,7 +18,8 @@ const reptileSchema = mongoose.Schema({
         attention: Number,
         emotionalSupport: Boolean,
         budget: Number,
-        smallChildren: Boolean
+        smallChildren: Boolean,
+        cuddle: Boolean
     },
 }, { collection: 'Reptiles' });
 

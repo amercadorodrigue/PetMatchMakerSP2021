@@ -48,3 +48,38 @@ export const getBirds = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+
+export const getAnimals = async (req, res) => {
+    try {
+        const params = req.query;
+
+        const space = params["values.space"];
+        const allergies = params["values.allergies"];
+        const energy = params["values.energy"];
+        const size = params["values.size"];
+        const attention = params["values.attention"];
+        const budget = params["values.budget"];
+        const emotionalSupport = params["values.emotionalSupport"];
+        const smallChildren = params["values.smallChildren"];
+        const cuddle = params["values.cuddle"];
+        console.log(" Query starts here ----- space: " + space + " allergies: " + allergies + " energy: " + energy + " size: " + size
+             + " attention: " + attention + " budget: " + budget + " emotional Support: " + emotionalSupport + " smallChildren: " + smallChildren
+              + " cuddle: " + cuddle);
+
+        const query = { "values.space" : { $lt: space }, "values.energy" : { $lt: energy },  "values.size" : { $lt: size },  "values.attention" : { $lt: attention },  "values.budget" : { $lt: budget} , "values.emotionalSupport" : emotionalSupport ,  "values.smallChildren" : smallChildren ,  "values.allergies" : allergies }; 
+        const bird = await BirdAnimal.find( query );
+        const mammal = await MammalAnimal.find( query );
+        const fish = await FishAnimal.find( query );
+        const reptile = await ReptileAnimal.find( query );
+        const animals = [];
+        animals.push(mammal);
+        animals.push(bird);
+        animals.push(fish);
+        animals.push(reptile);
+        
+    
+        res.status(200).json(animals);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}

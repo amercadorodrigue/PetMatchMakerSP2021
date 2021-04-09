@@ -42,3 +42,12 @@ export const getReptiles = () => async (dispatch) => {
         console.log(error);
     }
 }
+export const getAnimals = (values) => async (dispatch) => {
+
+    try {
+        const { data } = await api.fetchAnimals(values);
+        dispatch({type: FETCH_ALL, payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}
