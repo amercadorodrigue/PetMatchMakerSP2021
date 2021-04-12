@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 //Local host to test and make things work
-const url = 'http://localhost:5000';
+//const url = 'http://localhost:5000';
 
 //Actual deployed Server
-// const url = 'https://pet-matchmaker.herokuapp.com/';
+ const url = 'https://pet-matchmaker.herokuapp.com/';
 
 
 export const fetchBirds = () => axios.get(`${url}/Birds`);
