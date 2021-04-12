@@ -66,16 +66,20 @@ export const getAnimals = async (req, res) => {
              + " attention: " + attention + " budget: " + budget + " emotional Support: " + emotionalSupport + " smallChildren: " + smallChildren
               + " cuddle: " + cuddle);
 
-        const query = { "values.space" : { $lt: space }, "values.energy" : { $lt: energy },  "values.size" : { $lt: size },  "values.attention" : { $lt: attention },  "values.budget" : { $lt: budget} , "values.emotionalSupport" : emotionalSupport ,  "values.smallChildren" : smallChildren ,  "values.allergies" : allergies }; 
+        const query = { 
+            "values.space" : { $lt: space }, "values.energy" : { $lt: energy },  "values.size" : { $lt: size },
+            "values.emotionalSupport" : emotionalSupport, "values.budget" : { $lt: budget} ,"values.smallChildren" : smallChildren ,
+            "values.allergies" : allergies, "values.attention" : { $lt: attention }, "values.cuddle" : cuddle   
+        }; 
         const bird = await BirdAnimal.find( query );
         const mammal = await MammalAnimal.find( query );
         const fish = await FishAnimal.find( query );
         const reptile = await ReptileAnimal.find( query );
         const animals = [];
-        animals.push(mammal);
-        animals.push(bird);
-        animals.push(fish);
-        animals.push(reptile);
+        //animals.push(mammal);
+        //animals.push(bird);
+        //animals.push(fish);
+        //animals.push(reptile);
         
     
         res.status(200).json(animals);
