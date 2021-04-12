@@ -4,7 +4,7 @@ import axios from 'axios';
 //const url = 'http://localhost:5000';
 
 //Actual deployed Server
- const url = 'https://pet-matchmaker.herokuapp.com/';
+const url = 'https://pet-matchmaker.herokuapp.com/app';
 
 
 export const fetchBirds = () => axios.get(`${url}/Birds`);
