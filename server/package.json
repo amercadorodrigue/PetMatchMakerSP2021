@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.14.x"
+},
   "scripts": {
     "start": "nodemon index.js"
   },

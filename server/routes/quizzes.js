@@ -3,6 +3,7 @@ import { getBirds, getFish, getMammals, getReptiles, getAnimals} from '../contro
 const router = express.Router();
 
 //trying different requests
+router.get('/', (req, res) => { res.send('Hello from Express!')});
 router.get('/Birds', getBirds);
 router.get('/Fish', getFish);
 router.get('/Mammals', getMammals);
