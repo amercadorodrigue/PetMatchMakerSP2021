@@ -91,7 +91,7 @@ const Question = () => {
               </Container>
               <Container maxWidth="sm">
                 {questionList[currentQuestion].answers.map((answer, index) => (
-                  <Button key={index} className={classes.buttons} variant="contained" color="primary" fullWidth onClick={() => handleAnswerOptionClick(
+                  <Button key={index} className={classes.buttons} variant="contained" fullWidth onClick={() => handleAnswerOptionClick(
                     questionList[currentQuestion].topic,
                     answer.value
                   )}>{answer.label}</Button>

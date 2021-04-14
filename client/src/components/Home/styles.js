@@ -1,6 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export default makeStyles(() => ({
+export default makeStyles((theme) => (
+    {
+
+        [theme.breakpoints.down('sm')]: {
+            mainContainer: {
+              flexDirection: "column-reverse"
+            }
+          },
     appBar: {
         padding: '15px',
         borderRadius: 15,
@@ -21,6 +28,14 @@ export default makeStyles(() => ({
         ],
         color: 'rgba(205,133,63, 1)',
         textAlign: 'center'
+    },
+    summaryPaper: {
+        paddingTop: '1px',
+        paddingBottom: '1px',
+        paddingRight: '35px',
+        paddingLeft: '35px',
+        marginBottom: '15px',
+        borderRadius: 15,
     },
     summary: {
         paddingTop: '15px',
@@ -43,5 +58,10 @@ export default makeStyles(() => ({
     },
     buttonSubmit: {
         backgroundColor: 'rgba(230,138,0, 1)',
+        marginBottom: '15px',
+        color: 'white',
+        '&:hover': {
+            backgroundColor: 'rgba(179, 107, 0, 1)',
+        }
     }
   }));

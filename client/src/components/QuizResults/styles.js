@@ -40,6 +40,11 @@ export default makeStyles(() => ({
     },
     buttonSubmit: {
         backgroundColor: 'rgba(230,138,0, 1)',
+        marginBottom: '15px',
+        color: 'white',
+        '&:hover': {
+            backgroundColor: 'rgba(179, 107, 0, 1)',
+        },
         marginBlock: '15px'
     },
     container: {
@@ -67,6 +72,7 @@ export default makeStyles(() => ({
         maxWidth: '500px',
         maxHeight: '500px',
         borderRadius: 5
-    }
+    },
+    
 
 }));

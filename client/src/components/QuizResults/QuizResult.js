@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Container, Button, Grid, CircularProgress, Typography, Paper } from '@material-ui/core';
+import { Container, Button, Grid, CircularProgress, Typography, Paper, Grow } from '@material-ui/core';
 import QuizResultCard from './QuizResultCard/QuizResultCard';
 import useStyles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { sizing } from '@material-ui/system'
+import SMLinks from '../SMLinks/SMLinks';
 
 const QuizResult = () => {
   const animals = useSelector((state) => state.animals);
@@ -47,8 +48,10 @@ const QuizResult = () => {
   
   return (
     <MuiThemeProvider theme={theme}>
-      <Container maxWidth="md">
+      <Grow in>
+        <Container maxWidth="md">
         <Grid className={classes.container} container justify="center" alignItems="stretch" spacing={1}>
+          
           {
             animals.map((animalType) => 
             animalType.map((singleAnimal)=>(
@@ -57,11 +60,15 @@ const QuizResult = () => {
                 </Grid>
               )))
           }
+          
         </Grid>
+        
+        <SMLinks></SMLinks>
         <Link to='/' style={{ textDecoration: 'none' }}>
-          <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Go Back Home</Button>
+          <Button className={classes.buttonSubmit} variant="contained"  fullWidth>Go Back Home</Button>
         </Link>
       </Container>
+      </Grow>
 
     </MuiThemeProvider>
 
