@@ -23,7 +23,7 @@ const SidePanel = () => {
                 Let us help you find a <i>your</i> life friend!
               </Typography>
             </Paper>
-            <Button color="primary" fullWidth className={classes.surveyButton} endIcon={<FeedbackRoundedIcon style={{ fill: "white" }}/>} target="_blank" href="http://www.google.com">
+            <Button color="primary" fullWidth className={classes.surveyButton} variant="contained" endIcon={<FeedbackRoundedIcon style={{ fill: "white" }}/>} target="_blank" href="http://www.google.com">
               Leave Feedback
             </Button>
           </Grid>

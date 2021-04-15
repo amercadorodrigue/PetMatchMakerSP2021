@@ -68,11 +68,13 @@ export default makeStyles(() => ({
         margin: 'auto',
     },
     image: {
-        margin: '2px',
-        maxWidth: '500px',
-        maxHeight: '500px',
+        marginTop: '5px',
+        marginBottom: '10px',
+        marginLeft: '5px',
+        marginRight: '5px',
+        width: '96%',
         borderRadius: 5
     },
-    
+
 
 }));

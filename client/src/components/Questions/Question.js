@@ -33,7 +33,6 @@ const Question = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
   const handleAnswerOptionClick = (topic, value) => {
-    console.log(values);
     const nextQuestion = currentQuestion + 1;
     if (topic === 'space'){
       setValues({ ...values, "values.space": value  });
@@ -67,7 +66,7 @@ const Question = () => {
   };
   return (
     <MuiThemeProvider theme={theme}>
-      <Container fixed maxWidth="sm" height="200">
+      <Container  maxWidth="sm" height="200">
         <Paper className={classes.paper} elevation={3} variant="outlined" position="static"  >
           {quizFinished ? (
 
