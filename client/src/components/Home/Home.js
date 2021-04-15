@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { Grow, Container, Grid, AppBar, Typography, Button, CssBaseline, Paper } from '@material-ui/core';
 import logo from '../../images/pet-house.svg';
 import useStyles from './styles';
 import SidePanel from './SidePanel/SidePanel';
 
 const Home = () => {
-  const theme = createMuiTheme({
+  var theme = createMuiTheme({
     palette: {
       background: {
         default: 'rgba(255,217,173, 1)'
       }
     }
   });
+  theme = responsiveFontSizes(theme);
   const classes = useStyles();
   return (
 
@@ -26,7 +27,7 @@ const Home = () => {
             <Typography className={classes.heading} variant="h2" align="center">Welcome to Pet Matchmaker!</Typography>
           </AppBar>
 
-          <Container maxWidth="lg">
+          
             <Grid container className={classes.mainContainer} justify="space-between" alignItems="stretch" spacing={2}>
               <Grid item xs={12} sm={8} >
                 <SidePanel />
@@ -50,7 +51,6 @@ const Home = () => {
               </Grid>
             </Grid>
           </Container>
-        </Container>
       </Grow>
     </MuiThemeProvider>
 

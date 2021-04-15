@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ExpandMoreIcon, ExpandLessIcon }  from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { Card, CardContent, CardMedia, Typography, CardActionArea, Box, Collapse, IconButton, CardActions, Grow } from '@material-ui/core';
 import useStyles from './styles';
-import SMLinks from '../../SMLinks/SMLinks';
+
 
 
 const ResultCard = ({ animals }) => {
@@ -27,12 +28,13 @@ const ResultCard = ({ animals }) => {
                 <Typography gutterBottom variant="h4" component="h4" fontWeight="fontWeightBold">
                     {animals.breed}
                 </Typography>
-                <CardActionArea>
-                <CardActions disableSpacing>
-                    <IconButton onClick={handleExpandClick}>
-                    </IconButton>
-                </CardActions>
-                </CardActionArea>
+                
+                    <CardActions disableSpacing>
+                        <IconButton onClick={handleExpandClick} aria-label="show more">
+                            {expand ? <ExpandMoreIcon/> : <ExpandLessIcon/>}
+                        </IconButton>
+                    </CardActions>
+             
                 <Collapse in={expand} timeout="auto" unmountOnExit>
                     <CardContent>
                         {headers.map(header =>
@@ -46,8 +48,9 @@ const ResultCard = ({ animals }) => {
                 </Collapse>
 
             </Card>
-
         </Grow>
+
+
     );
 }
 

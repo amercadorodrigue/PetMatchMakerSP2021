@@ -4,8 +4,10 @@ export default makeStyles((theme) => (
     {
         gridContainer: {
             direction: 'row',
-            [theme.breakpoints.up('xs')]: {
-                direction: 'column'
+            flexWrap: 'nowrap',
+            [theme.breakpoints.down('sm')]: {
+                direction: 'column',
+                flexWrap: 'wrap',
             },
 
         },
@@ -17,7 +19,6 @@ export default makeStyles((theme) => (
             paddingLeft: '15px',
             marginBottom: '15px',
             borderRadius: 15,
-            flex: 2
         },
         image: {
             marginBottom: '10px',

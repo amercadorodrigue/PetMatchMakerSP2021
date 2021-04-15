@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Home from '../components/Home/Home';
+import NotFound from '../components/NotFound/NotFound';
 import Results from './Results';
 import Quiz from './Quiz';
 import { useDispatch } from 'react-redux';
 
-import { getBirds, getFish, getMammals, getReptiles } from '../redux/actions/animals';
 
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
       <Route exact path='/' component={Home} />
       <Route path='/quiz' component={Quiz} />
       <Route path='/results' component={Results} />
+      <Route component={NotFound}/>
     </Switch>
   );
 };

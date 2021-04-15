@@ -1,23 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { Container, Button, Grid, CircularProgress, Typography, Paper, Grow } from '@material-ui/core';
+import { Container, Button, Grid, CircularProgress, Typography, Paper, Grow, responsiveFontSizes} from '@material-ui/core';
 import QuizResultCard from './QuizResultCard/QuizResultCard';
 import useStyles from './styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { sizing } from '@material-ui/system'
+import { useSelector } from 'react-redux';
 import SMLinks from '../SMLinks/SMLinks';
+
 
 const QuizResult = () => {
   const animals = useSelector((state) => state.animals);
   const classes = useStyles();
-   const theme = createMuiTheme({
+   var theme = createMuiTheme({
     palette: {
       background: {
         default: 'rgba(255,217,173, 1)'
       }
     }
   });
+  theme = responsiveFontSizes(theme);
   var counter = 0;  
   console.log(animals);
   animals.map((animal) => {if(!animal.length) counter++});
@@ -49,21 +50,23 @@ const QuizResult = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <Grow in>
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
         <Grid className={classes.container} container justify="center" alignItems="stretch" spacing={1}>
           
           {
             animals.map((animalType) => 
-            animalType.map((singleAnimal)=>(
-                <Grid key={singleAnimal._id+1} item xs={10} md={6}>
-                  <QuizResultCard key={singleAnimal._id+2} animals={singleAnimal} />
+            animalType.map((singleAnimal, index)=>(
+                <Grid key={index} item lg={6} xs={12} sm={12}>
+                  <QuizResultCard key={index+1} animals={singleAnimal} />
                 </Grid>
               )))
           }
-          
+          <Grid item lg={8} xs={12} sm={12}>
+            <SMLinks></SMLinks>
+          </Grid>
         </Grid>
         
-        <SMLinks></SMLinks>
+        
         <Link to='/' style={{ textDecoration: 'none' }}>
           <Button className={classes.buttonSubmit} variant="contained"  fullWidth>Go Back Home</Button>
         </Link>
