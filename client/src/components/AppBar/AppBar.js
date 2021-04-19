@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { Container, AppBar, Typography, CssBaseline } from '@material-ui/core';
 import logo from '../../images/pet-house.svg';
 import useStyles from './styles';
 
 
 const AppBarComponent = () => {
-    const theme = createMuiTheme({
+    var theme = createMuiTheme({
       palette: {
         background: {
           default: 'rgba(255,217,173, 1)'
         }
       }
     });
+    theme = responsiveFontSizes(theme);
     const classes = useStyles();
     return (
     <MuiThemeProvider theme={theme}>

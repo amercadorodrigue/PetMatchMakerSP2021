@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Card, CardContent, CardMedia, Typography, CardActionArea, Box, Collapse, IconButton, CardActions } from '@material-ui/core';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import { Card, CardContent, CardMedia, Typography, CardActionArea, Box, Collapse, IconButton, CardActions, Grow } from '@material-ui/core';
 import useStyles from './styles';
+
 
 
 const ResultCard = ({ animals }) => {
@@ -9,40 +11,44 @@ const ResultCard = ({ animals }) => {
     const [expand, setExpand] = useState(false);
 
     const handleExpandClick = () => {
-        setExpand( !expand );
+        setExpand(!expand);
     };
 
     const headers = Object.keys(animals).filter(key => key.toString() !== "_id" && key.toString() !== "values" && key.toString() !== "image");
     return (
-        <Card key={animals._id + 3} className={classes.root} variant="outlined">
-            <CardMedia className={classes.media}
-                component="img"
-                alt={`${animals.image}`}
-                src={`/images/cards/${animals.image}`}
-                title={`${animals.image}`}
-            />
-            
+        <Grow in>
+            <Card key={animals._id + 3} className={classes.root} variant="outlined">
+                <CardMedia className={classes.media}
+                    component="img"
+                    alt={`${animals.image}`}
+                    src={`/images/cards/${animals.image}`}
+                    title={`${animals.image}`}
+                />
+
                 <Typography gutterBottom variant="h4" component="h4" fontWeight="fontWeightBold">
                     {animals.breed}
                 </Typography>
-                <CardActions disableSpacing>
-                    <IconButton onClick={handleExpandClick}>
-                        <ExpandMoreIcon />
-                    </IconButton>
-                </CardActions>
+                
+                    <CardActions disableSpacing>
+                        <IconButton onClick={handleExpandClick} aria-label="show more">
+                            {expand ? <ExpandMoreIcon/> : <ExpandLessIcon/>}
+                        </IconButton>
+                    </CardActions>
+             
                 <Collapse in={expand} timeout="auto" unmountOnExit>
                     <CardContent>
-                    {headers.map(header =>
-                        <div key={header}>
-                            <Typography gutterBottom variant="subtitle1" component="h5"> <Box fontWeight="fontWeightBold" display='inline'>
-                                {header.charAt(0).toLocaleUpperCase() + header.slice(1).replace(/([a-z0-9])([A-Z])/g, '$1 $2')}: </Box>  {animals[header]}
-                            </Typography>
-                        </div>
-                    )}
+                        {headers.map(header =>
+                            <div key={header}>
+                                <Typography gutterBottom variant="subtitle1" component="h5"> <Box fontWeight="fontWeightBold" display='inline'>
+                                    {header.charAt(0).toLocaleUpperCase() + header.slice(1).replace(/([a-z0-9])([A-Z])/g, '$1 $2')}: </Box>  {animals[header]}
+                                </Typography>
+                            </div>
+                        )}
                     </CardContent>
                 </Collapse>
-        
-        </Card>
+
+            </Card>
+        </Grow>
 
 
     );
