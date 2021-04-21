@@ -54,7 +54,7 @@ const QuizResult = () => {
             <Grid className={classes.container} direction="row" container justify="center" alignItems="stretch" spacing={6}>
 
               {
-                !animals.length ? <div><CircularProgress></CircularProgress><br></br></div> :
+                !animals.length ? <Grid item lg={12} xs={12} sm={12} style={{textAlign: "center"}} ><CircularProgress></CircularProgress></Grid> :
                   animals.map((animalType) =>
                     animalType.map((singleAnimal, index) => (
                       <Grid key={index} item lg={5} xs={12} sm={12}>

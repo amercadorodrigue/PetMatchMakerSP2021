@@ -24,7 +24,13 @@ export default makeStyles((theme) => (
             marginBottom: '10px',
             height: '75%',
             width: '100%',
-            borderRadius: 5
+            borderRadius: 5,
+            [theme.breakpoints.down('sm')]: {
+                marginBottom: '10px',
+                height: '75%',
+                width: '100%',
+                borderRadius: 5,
+            },
         },
         summary: {
             paddingTop: '15px',
