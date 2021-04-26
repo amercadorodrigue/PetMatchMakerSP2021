@@ -99,6 +99,8 @@ const Question = () => {
                     answer.value
                   )}>{answer.label}</Button>
                 ))}
+                {currentQuestion!=0 ?
+                <Button className={classes.previousButton} variant="contained" onClick={() =>  setCurrentQuestion(currentQuestion-1) }>Previous Question</Button> : <div></div>}
               </Container>
             </>)}
         </Paper>

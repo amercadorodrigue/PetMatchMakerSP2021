@@ -48,6 +48,14 @@ export default makeStyles((theme) => ({
             backgroundColor: 'rgba(179, 107, 0, 1)',
         }
     },
+    previousButton: {  
+        margin: '10px',
+        backgroundColor: 'rgba(230,138,0, 1)',
+        color: 'white',
+        '&:hover': {
+            backgroundColor: 'rgba(179, 107, 0, 1)',
+        }  
+      },
     resultContainer: {
         paddingLeft: '15px',
         fontFamily: [
