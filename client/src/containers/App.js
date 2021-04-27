@@ -19,7 +19,7 @@ const App = () => {
       <Route exact path='/' component={Home} />
       <Route path='/quiz' component={Quiz} />
       <Route path='/results' component={Results} />
-      <Route component={NotFound}/>
+      <Route path='*' component={NotFound}/>
     </Switch>
   );
 };

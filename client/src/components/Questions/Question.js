@@ -71,7 +71,7 @@ const Question = () => {
           {quizFinished ? (
 
             <Container className= {classes.resultContainer} width="sm" >
-              <Typography className={classes.responseText} variant="h4" align="center">We got some results! </Typography>
+              <Typography className={classes.responseText} variant="h4" align="center">Click below to see your results! </Typography>
               <ReactImageAppear className={classes.image} src={'/images/snake-adopting.jpg'} alt="adopting"/>
               <ReactImageAppear className={classes.image} src={'/images/adopting.jpg'} alt="adopting" />
               <ReactImageAppear className={classes.image} src={'/images/cat-adopting.jpg'} alt="adopting"/>
