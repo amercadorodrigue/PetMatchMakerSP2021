@@ -30,8 +30,10 @@ const QuizResult = () => {
             {
               <Grid container className={classes.paper} item xs={10} md={6}>
                 <Paper>
-                  <img className={classes.image} src={'/images/sad-kitty.jpg'} alt="adopting" />
-                  <Typography variant="h5" className={classes.noResults}>We don't have results for you, but we are working to add more animals to match. <br></br> <b>Thank you for your patience!</b></Typography>
+                  <img className={classes.image} src={'/images/hooman.jpg'} alt="adopting" />
+                  <Typography variant="h5" className={classes.noResults}>Your needs are a bit too complicated for the animals we have in our database. 
+                  Therefore, we recommend a hooman. You can mutually choose to cuddle or have some space. Your human can also take themselves to potty. 
+                  Humans also have the ability to speak!</Typography>
                 </Paper>
               </Grid>
             }
