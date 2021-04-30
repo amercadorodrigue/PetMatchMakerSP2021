@@ -72,9 +72,9 @@ const Question = () => {
 
             <Container className= {classes.resultContainer} width="sm" >
               <Typography className={classes.responseText} variant="h4" align="center">Click below to see your results! </Typography>
-              <ReactImageAppear className={classes.image} src={'/images/pets-left.jpg'} alt="adopting"/>
+              
               <ReactImageAppear className={classes.image} src={'/images/pets-orange.jpg'} alt="adopting" />
-              <ReactImageAppear className={classes.image} src={'/images/pets-right.jpg'} alt="adopting"/>
+              
 
               
 
