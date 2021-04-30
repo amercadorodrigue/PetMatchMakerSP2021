@@ -38,7 +38,7 @@ const QuizResult = () => {
               </Grid>
             }
           </Grid>
-          <Grid container direction justify="stretch" spacing={2}>
+          <Grid container justify="center" spacing={2}>
             <Grid item item xs={6} md={6}>
               <Link to='/quiz' style={{ textDecoration: 'none' }}>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Retake Quiz</Button>
@@ -78,7 +78,7 @@ const QuizResult = () => {
               </Grid>
             </Grid>
 
-            <Grid container direction justify="stretch" spacing={2}>
+            <Grid container justify="center" spacing={2}>
             <Grid item item xs={6} md={6}>
               <Link to='/quiz' style={{ textDecoration: 'none' }}>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Retake Quiz</Button>

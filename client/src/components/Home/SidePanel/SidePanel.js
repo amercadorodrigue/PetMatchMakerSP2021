@@ -20,7 +20,7 @@ const SidePanel = () => {
           <Grid item xs={12} sm={12}>
             <Paper className={classes.summary}>
               <Typography className={classes.summaryText} variant="h4" align="center">
-                Let us help you find a <i>your</i> life friend!
+                Let us help you find <i>your</i> life friend!
               </Typography>
             </Paper>
             <Button color="primary" fullWidth className={classes.surveyButton} variant="contained" endIcon={<FeedbackRoundedIcon style={{ fill: "white" }}/>} target="_blank" href="https://forms.gle/PiAXeGBuWK2HJMLCA">
