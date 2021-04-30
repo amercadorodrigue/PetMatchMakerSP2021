@@ -31,16 +31,25 @@ const QuizResult = () => {
               <Grid container className={classes.paper} item xs={10} md={6}>
                 <Paper>
                   <img className={classes.image} src={'/images/hooman.jpg'} alt="adopting" />
-                  <Typography variant="h5" className={classes.noResults}>Your needs are a bit too complicated for the animals we have in our database. 
-                  Therefore, we recommend a human. You can mutually choose to cuddle or have some space. Your hooman can also take themselves to potty. 
+                  <Typography variant="h5" className={classes.noResults}>Your needs are a bit too complicated for the animals we have in our database.
+                  Therefore, we recommend a human. You can mutually choose to cuddle or have some space. Your hooman can also take themselves to potty.
                   Humans also have the ability to speak!</Typography>
                 </Paper>
               </Grid>
             }
           </Grid>
-          <Link to='/' style={{ textDecoration: 'none' }}>
-            <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Go Back Home</Button>
-          </Link>
+          <Grid container direction justify="stretch" spacing={2}>
+            <Grid item item xs={6} md={6}>
+              <Link to='/quiz' style={{ textDecoration: 'none' }}>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Retake Quiz</Button>
+              </Link>
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <Link to='/' style={{ textDecoration: 'none' }}>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Go Back Home</Button>
+              </Link>
+            </Grid>
+          </Grid>
         </Container>
 
       </MuiThemeProvider>
@@ -56,7 +65,7 @@ const QuizResult = () => {
             <Grid className={classes.container} direction="row" container justify="center" alignItems="stretch" spacing={6}>
 
               {
-                !animals.length ? <Grid item lg={12} xs={12} sm={12} style={{textAlign: "center"}} ><CircularProgress></CircularProgress></Grid> :
+                !animals.length ? <Grid item lg={12} xs={12} sm={12} style={{ textAlign: "center" }} ><CircularProgress></CircularProgress></Grid> :
                   animals.map((animalType) =>
                     animalType.map((singleAnimal, index) => (
                       <Grid key={index} item lg={5} xs={12} sm={12}>
@@ -64,15 +73,23 @@ const QuizResult = () => {
                       </Grid>
                     )))
               }
-              <Grid item lg={10} xs={11} sm={11}>
+              <Grid item lg={8} xs={11} sm={11}>
                 <SMLinks></SMLinks>
               </Grid>
             </Grid>
 
-
-            <Link to='/' style={{ textDecoration: 'none' }}>
-              <Button className={classes.buttonSubmit} variant="contained" fullWidth>Go Back Home</Button>
-            </Link>
+            <Grid container direction justify="stretch" spacing={2}>
+            <Grid item item xs={6} md={6}>
+              <Link to='/quiz' style={{ textDecoration: 'none' }}>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Retake Quiz</Button>
+              </Link>
+            </Grid>
+            <Grid item xs={6} md={6}>
+              <Link to='/' style={{ textDecoration: 'none' }}>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" fullWidth>Go Back Home</Button>
+              </Link>
+            </Grid>
+          </Grid>
           </Container>
         </Grow>
 

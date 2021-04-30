@@ -72,7 +72,7 @@ export default makeStyles(() => ({
         marginBottom: '10px',
         marginLeft: '5px',
         marginRight: '5px',
-        width: '96%',
+        width: '98%',
         borderRadius: 5
     },
 
