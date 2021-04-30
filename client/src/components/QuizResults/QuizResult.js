@@ -32,7 +32,7 @@ const QuizResult = () => {
                 <Paper>
                   <img className={classes.image} src={'/images/hooman.jpg'} alt="adopting" />
                   <Typography variant="h5" className={classes.noResults}>Your needs are a bit too complicated for the animals we have in our database. 
-                  Therefore, we recommend a hooman. You can mutually choose to cuddle or have some space. Your human can also take themselves to potty. 
+                  Therefore, we recommend a human. You can mutually choose to cuddle or have some space. Your hooman can also take themselves to potty. 
                   Humans also have the ability to speak!</Typography>
                 </Paper>
               </Grid>
