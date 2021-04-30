@@ -3,7 +3,7 @@ const questions = [
         question: 'What is your living space size?',
         topic: 'space',
         answers: [
-            { label: 'Apartment (BR)', value: 1 },
+            { label: 'Apartment (1 BR)', value: 1 },
             { label:'Small/Medium House', value: 3 },
             { label:'Lots of space inside!', value: 5 }
         ]
