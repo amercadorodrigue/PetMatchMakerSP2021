@@ -31,7 +31,7 @@ const ResultCard = ({ animals }) => {
                 
                     <CardActions disableSpacing>
                         <IconButton onClick={handleExpandClick} aria-label="show more">
-                            {expand ? <ExpandMoreIcon/> : <ExpandLessIcon/>}
+                            {expand ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                         </IconButton>
                     </CardActions>
              
