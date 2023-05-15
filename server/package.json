@@ -9,7 +9,9 @@
     "npm": "6.14.x"
 },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "heroku-postbuild": "echo Skip build on Heroku",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
